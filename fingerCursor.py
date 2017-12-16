@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# w/ openCV3, version 3.3.0
+
 import numpy as np
 import cv2
 from collections import deque
@@ -53,9 +55,11 @@ def fingerCursor(device):
     kernel1 = np.ones((kernel_size,kernel_size),np.float32)/kernel_size/kernel_size
     kernel2 = np.ones((10,10), np.uint8)/100
 
-    while(True):
+    while(cap.isOpened()):
         ## Capture frame-by-frame
         ret, frame_raw = cap.read()
+        while not ret:
+            ret,frame_raw = cap.read()
         frame_raw = cv2.flip(frame_raw,1)
         frame = frame_raw[:round(cap_height),:round(cap_width)]    # ROI of the image
         cv2.imshow('raw_frame',frame)
@@ -166,5 +170,5 @@ def fingerCursor(device):
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    device = 0    # if device = 0, use the built-in computer camera
+    device = 1    # if device = 0, use the built-in computer camera
     fingerCursor(device)

@@ -2,7 +2,7 @@ fingerCursor (Air Calligraphy)
 ==================
 > Final project for EECS332 Intro. to Computer Vision
 
-**Miaoding Dai & Evan Chien**
+##### **Miaoding Dai & Evan Chien**
 ##### _Northwestern University, Fall 2017_
 
 ![jing.gif](https://drive.google.com/uc?export=view&id=1gV6wn6KgTVq98Lpg9K3tcdvKPLfOgD_b)
